@@ -27,7 +27,7 @@ class MainController extends AbstractController
 		$this->client->setApplicationName('AutoPlaylist');
 		$this->client->setDeveloperKey("AIzaSyBSFLPC92s2hA3yNAVzdS1HIJ1Bg4lonJ8");
 		$this->client->setScopes('https://www.googleapis.com/auth/youtube');
-		$this->client->setRedirectUri('http://localhost:8000/auth/response');
+		$this->client->setRedirectUri('http://89.234.182.22/auth/response');
 		$this->client->setAccessType('offline');
 	}
 
