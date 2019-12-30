@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<header>
+	<a class="logo" href="{{ path('home') }}">
+		<img src="{{ asset('/images/autoplaylist-logo-red.svg') }}" alt="">
+	</a>
+	<span class="settings">
+		<img src="{{ userImage }}" alt="">
+	</span>
+</header>
+<main role="main" class="user">
+	<h1>Welcome, {{ username }}</h1>
+	<div class="welcome">
+		We created a playlist on your account
+	</div>
+	<div class="row">
+		<div class="card subscriptions">
+			<div class="card-inner">
+				<div class="card-title">
+					<h2>Channels</h2>
+				</div>
+				<div class="subscriptions-list">
+				{% for sub in subscriptions %}
+					<div class="subscriptions-item {% if sub.selected %} selected {% endif %}" data-id="{{ sub.id }}" data-type="{{ sub.type }}">
+						<img src="{{ sub.image }}" alt="">
+						<p class="subscriptions-item-name">{{ sub.name }}</p>
+						<span class="subscriptions-item-keywords">Keywords</span>
+						<span class="subscriptions-item-select">All</span>
+					</div>
+				{% endfor %}
+				</div>
+				<div class="card-control">
+					<span class="subcount">
+						<span class="subcount-value"></span>
+						<span>/ 30</span>
+						<span class="subcount-error"></span>
+					</span>
+					<span class="update button">Update</span>
+				</div>
+			</div>
+		</div>
+		<div class="card keywords">
+			<div class="card-inner">
+				<div class="card-title">
+					<h2>Keywords</h2>
+				</div>
+				<div class="keywords-list">
+					{% if keywords == null %}
+					<div class="keywords-item">
+						<input class="keywords-input" type="text">
+						<span class="keywords-item-delete"></span>
+					</div>
+					{% endif %}
+					{% for word in keywords %}
+					<div class="keywords-item">
+						<input class="keywords-input" type="text">
+						<span class="keywords-item-delete"></span>
+					</div>
+					{% endfor %}
+					<span class="keywords-add"></span>
+				</div>
+				<div class="card-control">
+					<span class="update button">Update</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

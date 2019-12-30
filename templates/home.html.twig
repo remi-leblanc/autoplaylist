@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<main role="main" class="home">
+    <img class="logo" src="{{ asset('/images/autoplaylist-logo-white.svg') }}">
+    <div class="about">
+        <p><strong>AutoPlaylist is a service allowing you to add automatically new YouTube subscriptions videos in a playlist.</strong></p>
+        <p>To start using AutoPlaylist, just log in to your Google Account :</p>
+        <a href="{{ path('auth') }}" class="button login">Log in</a>
+    </div>
+</main>
+{% endblock %}

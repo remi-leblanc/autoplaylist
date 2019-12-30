@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<header>
+	<a class="logo" href="{{ path('home') }}">
+		<img src="{{ asset('/images/autoplaylist-logo-red.svg') }}" alt="">
+	</a>
+</header>
+<div class="error error-not-found">
+    <img src="{{ asset('/images/lost-ghost.svg') }}" alt="">
+    <div class="error-text">
+        <h1>You are lost, aren't you ?</h1>
+        <div class="error-text-solution">
+        <p>The page you are looking for doesn't exist. Let me be you guide :</p>
+        <a class="button" href="../../">Back to homepage</a>
+    </div>
+</div>
+
+{% endblock %}

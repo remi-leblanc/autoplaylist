@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<header>
+	<a class="logo" href="{{ path('home') }}">
+		<img src="{{ asset('/images/autoplaylist-logo-red.svg') }}" alt="">
+	</a>
+</header>
+<div class="error error-privacy">
+    <img src="{{ asset('/images/shy-ghost.svg') }}" alt="">
+    <div class="error-text">
+        <h1>Don't be so shy :(</h1>
+        <div class="error-text-solution">
+        <p>We can't access to your channel subscriptions. Try to :</p>
+        <ul>
+            <li>Uncheck "Keep all my subscriptions private" in your channel settings</li>
+            <li>Subscribe at least to one channel and set your subscriptions to "Public"</li>
+        </ul>
+        <a class="button" href="../../">Back to homepage</a>
+    </div>
+</div>
+
+{% endblock %}

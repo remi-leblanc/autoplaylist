@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<header>
+	<a class="logo" href="{{ path('home') }}">
+		<img src="{{ asset('/images/autoplaylist-logo-red.svg') }}" alt="">
+	</a>
+</header>
+<div class="error error-server">
+    <img src="{{ asset('/images/it-ghost.svg') }}" alt="">
+    <div class="error-text">
+        <h1>We are working hard</h1>
+        <div class="error-text-solution">
+        <p>Our servers encoutered an error, but don't worry, the IT guy will solve it quickly</p>
+        <a class="button" href="../../">Back to homepage</a>
+    </div>
+</div>
+
+{% endblock %}
